@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+</head>
+<body>
+    <div class="loading">
+        <div class="atom-animation">
+            <div class="nucleus"></div>
+            <div class="electron-orbit">
+                <div class="electron"></div>
+            </div>
+            <div class="electron-orbit">
+                <div class="electron"></div>
+            </div>
+            <div class="electron-orbit">
+                <div class="electron"></div>
+            </div>
+        </div>
+        <div class="split-text-container">
+            <span class="text-part left">ELEMEN</span>
+            <span class="text-part right">TOPEDIA</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span>ELEMENTOPEDIA</span>
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <a href="#explorer"><button class="cta-button">Explore Table</button></a>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <h1>Explore the <span>Periodic Table</span> in a Whole New Way</h1>
+                <p>Discover the elements that make up our universe with our interactive periodic table. Perfect for students, teachers, and chemistry enthusiasts.</p>
+                <div class="hero-buttons">
+                    <a href="#explorer" class="cta-button">Start Exploring</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./homepage-image.png" alt="">
+            </div>
+        </div>
+
+        <!-- Animated SVG Background -->
+        <svg class="atom-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <!-- Nucleus -->
+            <circle cx="250" cy="250" r="20" fill="#3b82f6" />
+            
+            <!-- Electron Orbits -->
+            <ellipse class="electron-orbit" cx="250" cy="250" rx="100" ry="180" transform="rotate(0 250 250)" />
+            <ellipse class="electron-orbit" cx="250" cy="250" rx="180" ry="100" transform="rotate(0 250 250)" />
+            <ellipse class="electron-orbit" cx="250" cy="250" rx="150" ry="150" transform="rotate(45 250 250)" />
+            
+            <!-- Electrons -->
+            <circle class="electron" cx="250" cy="70" r="6" />
+            <circle class="electron" cx="430" cy="250" r="6" />
+            <circle class="electron" cx="250" cy="430" r="6" />
+            <circle class="electron" cx="70" cy="250" r="6" />
+            <circle class="electron" cx="355" cy="355" r="6" />
+            <circle class="electron" cx="145" cy="145" r="6" />
+        </svg>
+
+        <!-- Floating Element Symbols -->
+        <div class="animated-background">
+            <div class="element-symbol" style="top: 0%; left: 10%; font-size: 3rem; --rotation: 15deg; --delay: 0s;">H</div>
+            <div class="element-symbol" style="top: 6%; left: 85%; font-size: 4rem; --rotation: -10deg; --delay: 2s;">O</div>
+            <div class="element-symbol" style="top: 15%; left: 10%; font-size: 5rem; --rotation: 5deg; --delay: 1s;">C</div>
+            <div class="element-symbol" style="top: 22%; left: 50%; font-size: 5rem; --rotation: 5deg; --delay: 1s;">Ar</div>
+            <div class="element-symbol" style="top: 18%; left: 85%; font-size: 3.5rem; --rotation: -5deg; --delay: 3s;">Na</div>
+            <div class="element-symbol" style="top: 7%; left: 30%; font-size: 4.5rem; --rotation: 20deg; --delay: 2.5s;">Fe</div>
+            <div class="element-symbol" style="top: 12%; left: 60%; font-size: 3.8rem; --rotation: -15deg; --delay: 1.5s;">Au</div>
+            <div class="element-symbol" style="top: 2%; left: 60%; font-size: 4.2rem; --rotation: 10deg; --delay: 0.5s;">He</div>
+            <div class="element-symbol" style="top: 27%; left: 22%; font-size: 4.2rem; --rotation: 10deg; --delay: 0.5s;">Cr</div>
+            <div class="element-symbol" style="top: 32%; left: 70%; font-size: 4.2rem; --rotation: 10deg; --delay: 0.5s;">Ti</div>
+        </div>
+
+        <!-- about us -->
+        <section class="about-container" id="about">
+            <div class="about">
+                <h1>About the Periodic Table</h1>
+                <p>The periodic table of elements is a tabular arrangement of the chemical elements, ordered by their atomic number, electron configuration, and recurring chemical properties. It is widely used in chemistry, physics, and other sciences, and is generally seen as an icon of chemistry.</p>
+                <p>The table has been refined several times since Russian chemist Dmitri Mendeleev published his periodic table in 1869 based on the atomic mass of the elements. The modern table is based on the quantum mechanical model of electron configuration, which explains how electrons are structured within atoms.</p>
+            </div>
+            
+        </section>
+
+        <!-- categories option -->
+        <section class="elem-category" id="categories">
+            <div class="circles">
+                <div class="background"></div>
+                <div class="background2"></div>
+            </div>
+    
+            <div class="elem-container">
+                <h1>Explore Element Categories</h1>
+                <p class="description">Elements are organized into categories based on their properties and electron configurations.</p>
+                <div class="grid">
+                <div class="card">
+                    <div class="card-bar alkali"></div>
+                    <div class="card-title">Alkali Metals</div>
+                    <div class="card-desc">Highly reactive metals that form alkaline solutions</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar alkaline"></div>
+                    <div class="card-title">Alkaline Earth Metals</div>
+                    <div class="card-desc">Reactive metals with two electrons in their outer shell</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar transition"></div>
+                    <div class="card-title">Transition Metals</div>
+                    <div class="card-desc">Metals with partially filled d orbitals</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar post-transition"></div>
+                    <div class="card-title">Post-Transition Metals</div>
+                    <div class="card-desc">Metals with poor mechanical properties</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar metalloids"></div>
+                    <div class="card-title">Metalloids</div>
+                    <div class="card-desc">Elements with properties of both metals and nonmetals</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar nonmetals"></div>
+                    <div class="card-title">Nonmetals</div>
+                    <div class="card-desc">Elements that are poor conductors of heat and electricity</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar halogens"></div>
+                    <div class="card-title">Halogens</div>
+                    <div class="card-desc">Highly reactive nonmetals that form salts</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar noblegases"></div>
+                    <div class="card-title">Noble Gases</div>
+                    <div class="card-desc">Unreactive gases with complete electron shells</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar lanthanides"></div>
+                    <div class="card-title">Lanthanides</div>
+                    <div class="card-desc">Rare earth elements with atomic numbers 57–71</div>
+                </div>
+                <div class="card">
+                    <div class="card-bar actinides"></div>
+                    <div class="card-title">Actinides</div>
+                    <div class="card-desc">Radioactive elements with atomic numbers 89–103</div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <section class="container" id="explorer">
+        <div class="pt-head">
+            <h1>Periodic Table</h1>
+        </div>
+        <div class="filter-controls">
+            <h3>Filter Elements according to their properties</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Elements</button>
+                <button class="filter-btn" data-filter="metal">Metals</button>
+                <button class="filter-btn" data-filter="nonmetal">Non-metals</button>
+                <button class="filter-btn" data-filter="alkali-metal">Alkali Metals</button>
+                <button class="filter-btn" data-filter="alkaline-earth-metal">Alkaline Earth Metals</button>
+                <button class="filter-btn" data-filter="transition-metal">Transition Metals</button>
+                <button class="filter-btn" data-filter="metalloid">Metalloids</button>
+                <button class="filter-btn" data-filter="noble-gas">Noble Gases</button>
+                <button class="filter-btn" data-filter="halogen">Halogens</button>
+                <button class="filter-btn" data-filter="lanthanide">Lanthanides</button>
+                <button class="filter-btn" data-filter="actinide">Actinides</button>
+            </div>
+        </div>
+
+        <div class="periodic-table" id="periodicTable" style="opacity: 1;">
+            <!-- Elements will be dynamically inserted here -->
+        </div>
+
+        <div class="legend">
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color alkali-metal" style="opacity: 1;"></div>
+                <span>Alkali Metals</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color alkaline-earth-metal" style="opacity: 1;"></div>
+                <span>Alkaline Earth Metals</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color transition-metal" style="opacity: 1;"></div>
+                <span>Transition Metals</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color post-transition-metal" style="opacity: 1;"></div>
+                <span>Post-Transition Metals</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color metalloid" style="opacity: 1;"></div>
+                <span>Metalloids</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color nonmetal" style="opacity: 1;"></div>
+                <span>Nonmetals</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color halogen" style="opacity: 1;"></div>
+                <span>Halogens</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color noble-gas" style="opacity: 1;"></div>
+                <span>Noble Gases</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color lanthanide" style="opacity: 1;"></div>
+                <span>Lanthanides</span>
+            </div>
+            <div class="legend-item" style="opacity: 1;">
+                <div class="legend-color actinide" style="opacity: 1;"></div>
+                <span>Actinides</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="element-modal" id="elementModal">
+        <div class="element-modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div id="elementDetails">
+                <!-- Element details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elementopedia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
